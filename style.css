@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Mulish:wght@300&display=swap");
+:root {
+  --color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mainContainer {
+  width: 100% !important;
+  height: 100vh;
+  padding: 0 !important;
+}
+
+.seccion {
+  height: 100vh;
+}
+
+.headerContainer {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 10px 50px !important;
+  height: 16vh;
+  width: 100%;
+  transition: 0.5s;
+}
+.headerContainer .logo {
+  display: flex;
+  align-items: center;
+  height: 80%;
+}
+.headerContainer .logo img {
+  padding: 0;
+}
+.headerContainer .navbar {
+  display: flex;
+  font-size: 1.2rem;
+  width: 50%;
+}
+.headerContainer .navbar nav {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  gap: 20px;
+}
+.headerContainer .navbar nav .navLinks {
+  position: relative;
+  color: var(--color);
+  text-decoration: none;
+}
+.headerContainer .navbar nav .navLinks::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color);
+  transform: scaleX(0);
+  transition: 300ms ease-in-out;
+}
+.headerContainer .navbar nav .navLinks:hover::after {
+  transform: scaleX(1);
+  transition: 300ms ease-in-out;
+}
+
+.inicio {
+  background-image: url(/img/marbleBg.jpg);
+  background-size: cover;
+  padding-top: 16vh;
+  display: flex;
+}
+.inicio .inicioTexts {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  transform: translateX(-100%);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.inicio .inicioTexts h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.inicio .inicioTexts p {
+  font-size: 1.3rem;
+}
+.inicio .inicioTexts a {
+  background-color: rgba(123, 121, 141, 0.5);
+  padding: 5px;
+  font-size: 1.15rem;
+  font-weight: 550;
+  text-decoration: none;
+  color: black;
+  transition: all 300ms;
+}
+.inicio .inicioTexts a:hover {
+  box-shadow: 3px 3px 0 0 rgb(27, 27, 34);
+}
+.inicio .inicioImg {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  transform: translateX(100%);
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+.inicio .inicioImg img {
+  width: 90%;
+  height: 70%;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.productos {
+  background-image: url(/img/graniteBg.jpg);
+  background-size: cover;
+  padding-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content !important;
+  color: white;
+}
+.productos h2 {
+  background-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: transparent;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 1000;
+}
+.productos .productsContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px 0 100px;
+}
+.productos .productosTag {
+  width: 800px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+}
+.productos .productosTag p {
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px solid black;
+  align-self: self-start;
+}
+.productos .productosTag h2 {
+  background-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: transparent;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 1000;
+  align-self: self-end;
+}
+.productos .productosTag .imgWrapper {
+  width: 510px;
+  height: 300px;
+  padding: 5px;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  overflow: hidden;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+}
+.productos .productosTag .imgWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.productos .productosLeft {
+  align-self: self-start;
+}
+.productos .productosRight {
+  align-self: self-end;
+}
+
+.contacto {
+  padding-top: 16vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 100px;
+}
+.contacto h2 {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 1000;
+  margin-bottom: 50px;
+}
+.contacto .contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contacto .contactContainer .formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50px;
+  gap: 30px;
+}
+.contacto .contactContainer .formulario input {
+  width: 80%;
+  padding: 10px;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+.contacto .contactContainer .formulario textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  font-weight: bold;
+  border: 2px solid black;
+}
+.contacto .contactContainer .formulario input[type=submit] {
+  border: none;
+  width: auto;
+  background-color: rgba(64, 63, 73, 0.5);
+  padding: 5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  transition: all 300ms;
+}
+.contacto .contactContainer .formulario input[type=submit]:hover {
+  box-shadow: 3px 3px 0 0 rgb(11, 11, 14);
+}
+.contacto .contactContainer .formulario input[type=submit]:focus {
+  outline: none;
+}
+.contacto .contactContainer .contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 0 50px;
+}
+.contacto .contactContainer .contactInfo span, .contacto .contactContainer .contactInfo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  margin: 0;
+}
+.contacto .contactContainer .contactInfo span svg, .contacto .contactContainer .contactInfo a svg {
+  transform: translateY(-3px);
+}
+
+.footer {
+  width: 100%;
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */
